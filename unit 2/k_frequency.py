@@ -1,5 +1,7 @@
 import hashlib
 
+# leetcode problem: https://leetcode.com/problems/top-k-frequent-elements/
+
 ## top k frequent items
 # this problem has a bit of a trick to it; k isnt the number of occurences of a single item,
 # it is the number of items that are the most frequent. so, for [1,2,3] and k = 3, the output
