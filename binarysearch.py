@@ -71,6 +71,51 @@ def missing_number(nums):
             if found_nums[i] == 0:
                 return i
 
+def missing_number_improved(nums):
+        length = len(nums)
+        # calculate factorial of range
+        range_total = (length+1)*length//2
+        
+        for i in nums:
+            # subtract each nums element from range total
+            range_total -= i
+        
+        # now we have our missing element
+        return range_total
+    
+
+def firstBadVersion(n):
+        start = 1
+        end = n
+        
+        while start <= end:
+            
+            mid = (start+end)//2
+            
+            # if mid is true, we move to the left
+            if isBadVersion(mid):
+                end = mid-1
+            # if mid is false, we move to the right
+            else:
+                start=mid+1
+        
+        if(isBadVersion(mid)):
+            return mid
+        else:
+            return mid+1
+
+
+def intersection_twoArrays(nums1, nums2):
+    res =[]
+    dict={}
+    for i in nums1:
+        dict[i] +=1
+    for j in nums2:
+        if j in dict:
+            res.append(j)
+            del dict[j]
+    return res
+
 
 
 if __name__ == "__main__":
